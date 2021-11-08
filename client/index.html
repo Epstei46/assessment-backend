@@ -11,7 +11,7 @@
     <main>
 
     <div>
-      <button id="complimentButton" style="margin:20px 0px">Get a compliment</button>
+      <button id="complimentButton" style="margin:0px">Get a compliment</button>
 
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script>
@@ -23,9 +23,7 @@
               });
         };
       </script>
-    </div>
 
-    <div>
       <button id="fortuneButton">Get a fortune</button>
 
       <script>
@@ -37,19 +35,19 @@
               });
         };
       </script>
-    </div>
+
     <br/>
 
     <form>
       <input
           type='text'
           id="compliment"
-          style="width:50vw; margin-bottom:5px;"
           placeholder="What's your favorite compliment?"/>
       <br/>
       <button id="addFavoriteButton">Add Favorite</button>
       <button id="updateFavoriteButton">Update Favorite</button>
     </form>
+    </div>
 
     <section id="favorites-container"></section>
 
