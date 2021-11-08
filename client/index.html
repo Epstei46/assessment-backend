@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Inspiration + Goals Tracker</h1>
+    </header>
+    <main>
+
+    <div>
+      <button id="complimentButton" style="margin:20px 0px">Get a compliment</button>
+
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script>
+        document.getElementById("complimentButton").onclick = function () {
+          axios.get("http://localhost:4000/api/compliment/")
+              .then(function (response) {
+                const data = response.data;
+                alert(data);
+              });
+        };
+      </script>
+    </div>
+
+    <div>
+      <button id="fortuneButton">Get a fortune</button>
+
+      <script>
+        document.getElementById("fortuneButton").onclick = function () {
+          axios.get("http://localhost:4000/api/fortune/")
+              .then(function (res) {
+                const data = res.data;
+                alert(data);
+              });
+        };
+      </script>
+    </div>
+    <br/>
+
+    <form>
+      <input
+          type='text'
+          id="compliment"
+          style="width:50vw; margin-bottom:5px;"
+          placeholder="What's your favorite compliment?"/>
+      <br/>
+      <button id="addFavoriteButton">Add Favorite</button>
+      <button id="updateFavoriteButton">Update Favorite</button>
+    </form>
+
+    <section id="favorites-container"></section>
+
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
