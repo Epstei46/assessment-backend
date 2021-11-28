@@ -16,11 +16,12 @@
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
       <script>
         document.getElementById("complimentButton").onclick = function () {
-          axios.get("http://localhost:4000/api/compliment/")
+          axios.get("http://localhost:4000/api/compliments/")
               .then(function (response) {
                 const data = response.data;
                 alert(data);
-              });
+              })
+              .catch(err => console.log(err));
         };
       </script>
 
@@ -32,7 +33,8 @@
               .then(function (res) {
                 const data = res.data;
                 alert(data);
-              });
+              })
+              .catch(err => console.log(err));
         };
       </script>
 
@@ -44,15 +46,16 @@
           id="compliment"
           placeholder="What's your favorite compliment?"/>
       <br/>
-      <button id="addFavoriteButton">Add Favorite</button>
-      <button id="updateFavoriteButton">Update Favorite</button>
+      <button id="addFavorite">Add Favorite</button>
+      <button id="updateFavorite" onclick="updateFavCompliment()">Update Favorite</button>
     </form>
     </div>
 
-    <section id="favorites-container"></section>
+    <section id="favorite-container" class="hide"></section>
 
     </main>
 
-    <script src="main.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js" defer></script>
   </body>
 </html>
